@@ -72,10 +72,17 @@ header { /* Estilo del Header */
     color: #fff;
 }
 
-.mapa { /* Estilo del Mapa */
-  width: 100%;
-  height: 400px; 
-  display: block;
+.map-responsive { /* Estilo del Mapa Responsivo */
+  overflow: hidden;
+  padding-bottom: 56.25%; /* Proporción 16:9 */
+  position: relative;
+  height: 0;
+}
+
+.map-responsive iframe { /* Estilo del Iframe del Mapa */
+  left: 0;
+  top: 0;
+  height: 100%;
 }
 
 footer {  /* Estilo del Footer */
