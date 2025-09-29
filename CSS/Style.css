@@ -106,6 +106,13 @@ header { /* Estilo del Header */
   }
 }
 
+.social-icons a {  /* Estilo de los Iconos Sociales en el Footer */
+  margin: 0 10px;
+  display: inline-block;
+  width: 30px;
+  border-radius: 10px;
+}
+
 footer {  /* Estilo del Footer */
   background-color: #111;
   color: #fff;
