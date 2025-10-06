@@ -1,83 +1,114 @@
+/* ==============================
+   Variables de Colores
+   ============================== */
+:root {
+  --bg-color: #f5f0de;         
+  --text-color: #333;           
+  --header-bg: #e6ddd1;         
+  --footer-bg: #111;            
+  --btn-download: #70d448;      
+  --btn-contact: #4879d4;       
+  --info-bg: #d1c1aa;           
+}
+
+/* ==============================
+   Estilos Generales
+   ============================== */
 body {
-  font-family: 'Roboto', sans-serif; /* Fuente de letra Principal */
-  background-color: rgb(168, 138, 106);
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   margin: 0;
   padding: 0;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-header { /* Estilo del Header */
-  background-color: rgb(245, 238, 222);
-  padding: 0px 0;
+header { 
+  background-color: var(--header-bg);
+  padding: 0;
+  transition: background-color 0.3s;
 }
 
-.navbar-brand img { /* Logo */
+.navbar-brand img { 
   max-width: 150px;
   height: 100px;
 }
 
-.nav-link { /* Estilo de los Links de la Barra de Navegación */
+.nav-link { 
   font-weight: 500;
   margin-left: 10px;
 }
 
-.nav-link.active { /* Si se activa un Link resalta la letra en Negrita */
+.nav-link.active { 
   font-weight: bold;
   color: #000 !important;
 }
 
-.content-section { /* Padding de las Secciones de Contenido */
+.content-section { 
   padding: 40px 20px;
 }
 
-.info-box { /* Características de las cajas que guardan Información */
-  background: rgb(204, 186, 165);
+.info-box { 
+  background: var(--info-bg);
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 20px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.info-box img { /* Imágenes de las cajas de Información */
+.info-box img { 
   max-width: 120px;
   height: auto;
   border-radius: 6px;
 }
 
-.Download { /* Estilo del Botón de Descarga */
-  background-color: #70d448;
+.info-box p, .info-box h3, .info-box h4 {
+  color: var(--text-color);
+}
+
+/* ==============================
+   Botones
+   ============================== */
+.Download { 
+  background-color: var(--btn-download);
   color: #fff;
   padding: 10px 20px;
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
+  transition: background-color 0.3s;
 }
 
-.Download:hover { /* Efecto Hover del Botón de Descarga */
+.Download:hover { 
   background-color: #5cbf3a;
   text-decoration: none;
   color: #fff;
 }
 
-.Contact { /* Estilo del Botón de Contacto */
-  background-color: #4879d4;
+.Contact { 
+  background-color: var(--btn-contact);
   color: #fff;
   padding: 10px 20px;
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
+  transition: background-color 0.3s;
 }
 
-.Contact:hover{ /* Efecto Hover del Botón de Contacto */
-    background-color: #3a61bf;
-    text-decoration: none;
-    color: #fff;
+.Contact:hover{ 
+  background-color: #3a61bf;
+  text-decoration: none;
+  color: #fff;
 }
 
-/* Contenedor de mapa responsivo */
+/* ==============================
+   Contenedor de Mapa
+   ============================== */
 .map-container {
   position: relative;
   width: 100%;
   max-width: 100%;
-  height: 400px; /* Fijo para desktop */
+  height: 400px; 
   margin: 0 auto;
   border-radius: 10px;
   overflow: hidden;
@@ -93,30 +124,201 @@ header { /* Estilo del Header */
   border: 0;
 }
 
-/* Ajustes para móvil */
 @media (max-width: 768px) {
-  .map-container {
-    height: 300px;
-  }
+  .map-container { height: 300px; }
 }
 
 @media (max-width: 480px) {
-  .map-container {
-    height: 250px;
-  }
+  .map-container { height: 250px; }
 }
 
-.social-icons a {  /* Estilo de los Iconos Sociales en el Footer */
+/* ==============================
+   Redes Sociales
+   ============================== */
+.social-icons a {  
   margin: 0 10px;
   display: inline-block;
   width: 30px;
   border-radius: 10px;
 }
 
-footer {  /* Estilo del Footer */
-  background-color: #111;
+/* ==============================
+   Footer
+   ============================== */
+footer {  
+  background-color: var(--footer-bg);
   color: #fff;
   text-align: center;
   padding: 10px;
   margin-top: 40px;
+  transition: background-color 0.3s;
+}
+
+/* ==============================
+   Dark Mode
+   ============================== */
+body.dark-mode {
+  --bg-color: #1e1e1e;
+  --text-color: #f0f0f0;
+  --header-bg: #2c2c2c;
+  --footer-bg: #111;
+  --btn-download: #4caf50;
+  --btn-contact: #2196f3;
+  --info-bg: #2c2c2c;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode header { background-color: #1f1f1f; }
+body.dark-mode .navbar .nav-link { color: #e0e0e0 !important; }
+body.dark-mode .info-box {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  border: 1px solid #333;
+}
+
+body.dark-mode .Download, 
+body.dark-mode .Contact, 
+body.dark-mode .btn-secondary {
+  background-color: #333 !important;
+  color: #fff !important;
+}
+
+body.dark-mode footer { background-color: #1f1f1f; color: #e0e0e0; }
+
+/* Botón modo claro/oscuro */
+#darkModeToggle {
+  transition: all 0.3s ease;
+}
+
+body.dark-mode #darkModeToggle {
+  background-color: #444 !important;
+  color: #fff !important;
+  border-color: #666 !important;
+}
+
+/* ===== GALERÍA DE IMÁGENES ===== */
+.hover-info {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 400px; /* evita que se deformen demasiado en pantallas grandes */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hover-img {
+  width: 100%;
+  aspect-ratio: 16/9; /* relación de aspecto elegante */
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+  border-radius: 12px;
+}
+
+.hover-info:hover .hover-img {
+  transform: scale(1.05);
+}
+
+/* Texto que aparece SOLO al pasar el mouse */
+.hover-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.65);
+  color: #fff;
+  padding: 12px;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hover-info:hover .hover-text {
+  opacity: 1;
+}
+
+/* Título fijo debajo de cada imagen */
+.img-caption {
+  font-weight: bold;
+  margin-top: 8px;
+  font-size: 1rem;
+  color: #000; /* siempre negro */
+  text-align: center;
+}
+
+body.dark-mode .img-caption {
+  color: #ffffff;
+}
+
+/* ==============================
+   Sección con fondo (full-width)
+   ============================== */
+.section-fondo {
+  position: relative;
+  margin: 0;
+  padding: 40px 20px; /* padding para que no quede pegado a los bordes */
+  width: 100%;
+  min-height: 400px;
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  text-align: left; /*alinea texto a la izquierda */
+  color: var(--text-color);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: background-image 0.3s;
+}
+
+/* Quitar posibles márgenes del body y html */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Fondo en modo claro */
+body:not(.dark-mode) .section-fondo {
+  background-image: url("../Imágenes/2669099_14624.jpg");
+}
+
+/* Fondo en modo oscuro */
+body.dark-mode .section-fondo {
+  background-image: url("../Imágenes/Fondo.jpg");
+}
+
+/* Texto dentro de la sección */
+.section-fondo h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+  color: inherit;
+}
+
+/*Filtro oscuro*/
+.section-fondo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3); 
+  z-index: 1; 
+}
+
+body.dark-mode .section-fondo::before {
+  background: rgba(0,0,0,0.5);
+}
+
+/* Texto encima del overlay */
+.section-fondo * {
+  position: relative;
+  z-index: 2;
 }
